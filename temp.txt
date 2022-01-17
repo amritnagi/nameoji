@@ -1,0 +1,5 @@
+https://gist.github.com/Armster15/db063ab0dc5be699ae07a067a7333752
+https://github.com/twitter/twemoji
+https://github.com/github/gemoji/blob/master/db/emoji.json
+https://github.com/amurani/unicode-emoji-list
+https://gist.github.com/oliveratgithub/0bf11a9aff0d6da7b46f1490f86a71eb?ref=webdesignernews.com
