@@ -702,6 +702,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   touch-action: none;
 }
 
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
 .flex-col {
   flex-direction: column;
 }
