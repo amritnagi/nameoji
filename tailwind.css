@@ -698,6 +698,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   cursor: pointer;
 }
 
+.touch-none {
+  touch-action: none;
+}
+
 .flex-col {
   flex-direction: column;
 }
