@@ -1,142 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nameoji - Name your startup with the power of Emoji's</title>
+    <meta name="description" content="Name your startup with the power of Emoji's" />
+    <meta name="keywords" content="Start-up, saas, name generator, business name generator, unicorn" />
+    <meta name="author" content="Amrit Nagi" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nameoji - Name your startup with the power of Emoji's</title>
-  <meta name="description" content="Name your startup with the power of Emoji's">
-  <meta name="keywords" content="Start-up, saas, name generator, business name generator, unicorn">
-  <meta name="author" content="Amrit Nagi">
-    
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nameoji.app">
-  <meta property="og:title" content="Nameoji - Name your startup with the power of Emoji's">
-  <meta property="og:description" content="Name your startup with the power of Emoji's">
-  <meta property="og:image" content="https://nameoji.app/social.png">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nameoji.app" />
+    <meta property="og:title" content="Nameoji - Name your startup with the power of Emoji's" />
+    <meta property="og:description" content="Name your startup with the power of Emoji's" />
+    <meta property="og:image" content="https://nameoji.app/social.png" />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://nameoji.app">
-  <meta property="twitter:title" content="Nameoji - Name your startup with the power of Emoji's">
-  <meta property="twitter:description" content="Name your startup with the power of Emoji's">
-  <meta property="twitter:image" content="https://nameoji.app/social.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://nameoji.app" />
+    <meta property="twitter:title" content="Nameoji - Name your startup with the power of Emoji's" />
+    <meta property="twitter:description" content="Name your startup with the power of Emoji's" />
+    <meta property="twitter:image" content="https://nameoji.app/social.png" />
 
+    <link href="tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
 
-  <link href="tailwind.min.css" rel="stylesheet">
-  <!-- Twemoji -->
-  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-  
-  <style>
-    img.emoji {
-      width: 100;
-      pointer-events: none;
-    }
-  </style>
+    <!-- Twemoji -->
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 
-</head>
+    <style>
+      img.emoji {
+        width: 100;
+        pointer-events: none;
+      }
+    </style>
+  </head>
 
-<body class="font-serif touch-manipulation">
+  <body class="font-serif touch-manipulation">
+    <!-- Header -->
+    <nav class="w-full px-8 text-gray-700 bg-white">
+      <div class="container flex flex-col items-center justify-center py-3 mx-auto md:py-5 max-w-7xl md:flex-row">
+        <span class="flex items-center font-sans text-3xl font-extrabold text-center text-black no-underline bg-transparent cursor-pointer focus:no-underline"> nameoji </span>
+      </div>
+    </nav>
+    <div class="h-2 bg-gradient-to-br from-purple-500 to-pink-500"></div>
 
+    <!--Main Section-->
+    <section class="relative h-full px-10 py-8 lg:py-12 bg-gradient-to-br from-slate-900 via-sky-900 to-indigo-900" x-data="nameoji()" x-init="shuffleaway();">
+      <div class="relative h-full max-w-5xl mx-auto">
+        <div class="mb-10 md:mb-16">
+          <h2 class="mb-4 text-2xl font-extrabold text-center text-white md:text-4xl lg:text-6xl md:mb-6">
+            Use <span class="text-yellow-300">emoji's</span> to name your next startup!
+          </h2>
+          <p class="max-w-xl mx-auto text-sm text-center text-gray-300 md:text-lg">
+            Click '<span class="text-pink-500">Shuffle</span>' to choose new random emoji's or click one to choose a random emoji.
+          </p>
 
-  <!-- Header -->
-  <Nav class="w-full px-8 text-gray-700 bg-white">
-    <div class="container flex flex-col items-center justify-center py-3 mx-auto md:py-5 max-w-7xl md:flex-row">
-      <span
-        class="flex items-center font-sans text-3xl font-extrabold text-center text-black no-underline bg-transparent cursor-pointer focus:no-underline">
-        nameoji
-      </span>
-    </div>
-  </Nav>
-  <div class="h-2 bg-gradient-to-br from-purple-500 to-pink-500"></div>
-
-  <!--Main Section-->
-  <section class="relative h-full px-10 py-8 lg:py-12 bg-gradient-to-br from-slate-900 via-sky-900 to-indigo-900" x-data="nameoji()" x-init="shuffleaway();">
-
-
-    <div class="relative h-full max-w-5xl mx-auto">
-      <div class="mb-10 md:mb-16">
-        <h2 class="mb-4 text-2xl font-extrabold text-center text-white md:text-4xl lg:text-6xl md:mb-6">Use
-          <span class="text-yellow-300">emoji's</span> to name your next startup!</h2>
-        <p class="max-w-xl mx-auto text-sm text-center text-gray-300 md:text-lg">
-          Click '<span class="text-pink-500">Shuffle</span>' to choose new random emoji's or click one to choose a random emoji.
-        </p>
-
-        <div class="flex flex-wrap items-center justify-center gap-4 mt-8 sm:gap-0">
-          <!-- First-->
-          <div class="space-y-6 text-center lg:ml-0 md:ml-10 ">
-            <div class="relative w-32 h-32 p-2 mx-auto md:w-48 md:h-48 xl:w-56 xl:h-56">
-              <img class="absolute inset-0 z-20 w-3/4 mx-auto my-auto cursor-pointer h-3/4"
-                :src="'https://twemoji.maxcdn.com/v/13.1.0/svg/' + emojis[emoji1].emoji.codePointAt(0).toString(16) +'.svg'"
-                @click="emoji1 = Math.floor(Math.random() * this.emojis.length);tag1='0'">
-              <svg class="absolute inset-0 w-full h-full mt-2 text-pink-500 transform scale-150 fill-current opacity-20"
-                viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M42.7,-73.4C55,-67,64.3,-54.7,69.9,-41.5C75.5,-28.3,77.5,-14.2,76.5,-0.6C75.4,12.9,71.3,25.8,64.6,37.3C57.9,48.7,48.8,58.6,37.6,63.1C26.4,67.5,13.2,66.5,0.8,65.2C-11.6,63.8,-23.2,62.1,-34.9,57.9C-46.6,53.7,-58.4,47.1,-67.1,37.1C-75.9,27,-81.6,13.5,-83.1,-0.9C-84.6,-15.2,-81.9,-30.5,-73.2,-40.7C-64.6,-51,-50.1,-56.4,-36.9,-62.3C-23.8,-68.2,-11.9,-74.6,1.7,-77.5C15.2,-80.4,30.5,-79.8,42.7,-73.4Z"
-                  transform="translate(100 100)"></path>
-              </svg>
-            </div>
-            <div class="space-y-2">
-              <div class="space-y-1 text-lg font-medium leading-6">
-                <p class="text-2xl font-extrabold text-center text-pink-500 md:text-4xl lg:text-6xl"
-                  x-text="emojis[emoji1].tags[tag1]"></p>
+          <div class="flex flex-wrap items-center justify-center gap-4 mt-8 sm:gap-0">
+            <!-- First-->
+            <div class="space-y-6 text-center lg:ml-0 md:ml-10">
+              <div class="relative w-32 h-32 p-2 mx-auto md:w-48 md:h-48 xl:w-56 xl:h-56">
+                <img
+                  class="absolute inset-0 z-20 w-3/4 mx-auto my-auto transition duration-300 transform cursor-pointer h-3/4 motion-reduce:transition-none motion-reduce:transform-none hover:scale-110"
+                  :src="'https://twemoji.maxcdn.com/v/13.1.0/svg/' + emojis[emoji1].emoji.codePointAt(0).toString(16) +'.svg'"
+                  @click="emoji1 = Math.floor(Math.random() * this.emojis.length);tag1='0'"
+                />
+                <svg class="absolute inset-0 w-full h-full mt-2 text-pink-500 transform scale-150 fill-current opacity-20" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M42.7,-73.4C55,-67,64.3,-54.7,69.9,-41.5C75.5,-28.3,77.5,-14.2,76.5,-0.6C75.4,12.9,71.3,25.8,64.6,37.3C57.9,48.7,48.8,58.6,37.6,63.1C26.4,67.5,13.2,66.5,0.8,65.2C-11.6,63.8,-23.2,62.1,-34.9,57.9C-46.6,53.7,-58.4,47.1,-67.1,37.1C-75.9,27,-81.6,13.5,-83.1,-0.9C-84.6,-15.2,-81.9,-30.5,-73.2,-40.7C-64.6,-51,-50.1,-56.4,-36.9,-62.3C-23.8,-68.2,-11.9,-74.6,1.7,-77.5C15.2,-80.4,30.5,-79.8,42.7,-73.4Z"
+                    transform="translate(100 100)"
+                  ></path>
+                </svg>
+              </div>
+              <div class="space-y-2">
+                <div class="space-y-1 text-lg font-medium leading-6">
+                  <p class="text-2xl font-extrabold text-center text-pink-500 md:text-4xl lg:text-6xl" x-text="emojis[emoji1].tags[tag1]"></p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!--Second-->
-          <div class="space-y-6 text-center lg:mr-0 md:mr-10">
-            <div class="relative w-32 h-32 p-2 mx-auto md:w-48 md:h-48 xl:w-56 xl:h-56">
-              <img class="absolute inset-0 z-20 w-3/4 mx-auto my-auto cursor-pointer h-3/4"
-                :src="'https://twemoji.maxcdn.com/v/13.1.0/svg/' + emojis[emoji2].emoji.codePointAt(0).toString(16) +'.svg'"
-                @click="emoji2 = Math.floor(Math.random() * this.emojis.length);tag2 = '0'">
-              <svg
-                class="absolute inset-0 w-full h-full mt-2 text-purple-500 transform scale-150 fill-current opacity-20"
-                viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M42.7,-73.4C55,-67,64.3,-54.7,69.9,-41.5C75.5,-28.3,77.5,-14.2,76.5,-0.6C75.4,12.9,71.3,25.8,64.6,37.3C57.9,48.7,48.8,58.6,37.6,63.1C26.4,67.5,13.2,66.5,0.8,65.2C-11.6,63.8,-23.2,62.1,-34.9,57.9C-46.6,53.7,-58.4,47.1,-67.1,37.1C-75.9,27,-81.6,13.5,-83.1,-0.9C-84.6,-15.2,-81.9,-30.5,-73.2,-40.7C-64.6,-51,-50.1,-56.4,-36.9,-62.3C-23.8,-68.2,-11.9,-74.6,1.7,-77.5C15.2,-80.4,30.5,-79.8,42.7,-73.4Z"
-                  transform="translate(100 100)"></path>
-              </svg>
-            </div>
-            <div class="space-y-2">
-              <div class="space-y-1 text-lg font-medium leading-6">
-                <p class="text-2xl font-extrabold text-center text-purple-500 md:text-4xl lg:text-6xl"
-                  x-text="emojis[emoji2].tags[tag2]"></p>
+            <!--Second-->
+            <div class="space-y-6 text-center lg:mr-0 md:mr-10">
+              <div class="relative w-32 h-32 p-2 mx-auto md:w-48 md:h-48 xl:w-56 xl:h-56">
+                <img
+                  class="absolute inset-0 z-20 w-3/4 mx-auto my-auto transition duration-300 transform cursor-pointer h-3/4 motion-reduce:transition-none motion-reduce:transform-none hover:scale-110"
+                  :src="'https://twemoji.maxcdn.com/v/13.1.0/svg/' + emojis[emoji2].emoji.codePointAt(0).toString(16) +'.svg'"
+                  @click="emoji2 = Math.floor(Math.random() * this.emojis.length);tag2 = '0'"
+                />
+                <svg
+                  class="absolute inset-0 w-full h-full mt-2 text-purple-500 transform scale-150 fill-current opacity-20"
+                  viewBox="0 0 200 200"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M42.7,-73.4C55,-67,64.3,-54.7,69.9,-41.5C75.5,-28.3,77.5,-14.2,76.5,-0.6C75.4,12.9,71.3,25.8,64.6,37.3C57.9,48.7,48.8,58.6,37.6,63.1C26.4,67.5,13.2,66.5,0.8,65.2C-11.6,63.8,-23.2,62.1,-34.9,57.9C-46.6,53.7,-58.4,47.1,-67.1,37.1C-75.9,27,-81.6,13.5,-83.1,-0.9C-84.6,-15.2,-81.9,-30.5,-73.2,-40.7C-64.6,-51,-50.1,-56.4,-36.9,-62.3C-23.8,-68.2,-11.9,-74.6,1.7,-77.5C15.2,-80.4,30.5,-79.8,42.7,-73.4Z"
+                    transform="translate(100 100)"
+                  ></path>
+                </svg>
+              </div>
+              <div class="space-y-2">
+                <div class="space-y-1 text-lg font-medium leading-6">
+                  <p class="text-2xl font-extrabold text-center text-purple-500 md:text-4xl lg:text-6xl" x-text="emojis[emoji2].tags[tag2]"></p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="w-full py-4 text-sm text-center">
-            <div class="flex max-w-xl gap-2 mx-auto mt-6">
-              <button
-              class="flex items-center justify-center w-1/2 px-10 py-3 mx-auto mb-6 text-sm font-semibold text-center text-gray-400 border-2 border-purple-900 rounded-lg md:text-xl md:w-full hover:bg-purple-900 hover:text-white md:w-auto"
-              @click="swapsies()">
-              <svg class="hidden w-6 h-6 mr-6 text-purple-700 sm:block" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" />
-              <polyline points="16 3 20 7 16 11" />
-              <line x1="10" y1="7" x2="20" y2="7" />
-              <polyline points="8 13 4 17 8 21" />
-              <line x1="4" y1="17" x2="13" y2="17" />
-              </svg>
-              Swap</button>
-        
-              <button
-              class="flex items-center justify-center w-1/2 px-10 py-3 mx-auto mb-6 text-sm font-semibold text-center text-gray-400 border-2 border-pink-900 rounded-lg md:text-xl md:w-full hover:bg-pink-900 hover:text-white md:w-auto"
-              @click="favourite()">
-              <svg class="hidden w-6 h-6 mr-6 text-pink-700 sm:block" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" /></svg>
+            <div class="w-full py-4 text-sm text-center">
+              <div class="flex max-w-xl gap-2 mx-auto mt-6">
+                <button
+                  class="flex items-center justify-center w-1/2 px-10 py-3 mx-auto mb-6 text-sm font-semibold text-center text-gray-400 transition duration-300 transform border-2 border-purple-900 rounded-lg md:text-xl hover:bg-purple-900 hover:text-white md:w-auto motion-reduce:transition-none motion-reduce:transform-none hover:scale-110"
+                  @click="swapsies()"
+                >
+                  <svg
+                    class="hidden w-6 h-6 mr-6 text-purple-700 sm:block"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <polyline points="16 3 20 7 16 11" />
+                    <line x1="10" y1="7" x2="20" y2="7" />
+                    <polyline points="8 13 4 17 8 21" />
+                    <line x1="4" y1="17" x2="13" y2="17" />
+                  </svg>
+                  <span x-show="!doSwap">Swap</span>
+                  <span x-show="doSwap">Swapping...</span>
+                </button>
 
-              Favourite</button>
+                <button
+                  class="flex items-center justify-center w-1/2 px-10 py-3 mx-auto mb-6 text-sm font-semibold text-center text-gray-400 transition duration-300 transform border-2 border-pink-900 rounded-lg md:text-xl hover:bg-pink-900 hover:text-white md:w-auto motion-reduce:transition-none motion-reduce:transform-none hover:scale-110"
+                  @click="favourite()"
+                >
+                  <svg
+                    class="hidden w-6 h-6 mr-6 text-pink-700 sm:block"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                  </svg>
+
+                  <span x-show="!addFav">Shortlist</span>
+                  <span x-show="addFav">Shortlisted!</span>
+                </button>
+              </div>
             </div>
-
 
             <button
-              class="flex items-center justify-center w-full px-10 py-5 mx-auto my-6 text-xl font-semibold text-center text-white rounded-lg animate-pulse bg-gradient-to-br from-purple-500 to-pink-500 md:w-auto"
-              @click="shuffleaway()">
-              <svg class="w-6 h-6 mr-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              class="flex items-center justify-center w-full px-10 py-5 mx-auto my-6 text-xl font-semibold text-center text-white transition duration-300 transform rounded-lg animate-pulse bg-gradient-to-br from-purple-500 to-pink-500 md:w-auto motion-reduce:transition-none motion-reduce:transform-none hover:scale-110"
+              @click="shuffleaway()"
+            >
+              <svg class="w-6 h-6 mr-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="16 3 21 3 21 8" />
                 <line x1="4" y1="20" x2="21" y2="3" />
                 <polyline points="21 16 21 21 16 21" />
@@ -144,133 +170,143 @@
                 <line x1="4" y1="4" x2="9" y2="9" />
               </svg>
 
-              Shuffle</button>
+              <span x-show="!doShuffle">Shuffle</span>
+              <span x-show="doShuffle">Shuffling!!</span>
+            </button>
           </div>
 
-
           <div class="flex flex-col w-full gap-2 py-4 text-sm text-center text-gray-300">
-            <p>Just a bit of fun by <a href="https://twitter.com/amritnagi"
-                class="text-pink-500 underline hover:text-gray-300">@amritnagi</a>.</p>
-            <p>Inspired by <a href="https://twitter.com/tallneil"
-                class="text-pink-500 underline hover:text-gray-300">Neil Shankar's</a> icon for <a
-                href="https://www.producthunt.com/posts/snakeplant"
-                class="text-pink-500 underline hover:text-gray-300">Snake Plant</a></p>
-            <p>Built quickly using <a
-                href="https://a.paddle.com/v2/click/37973/124350?link=3167"
-                class="text-pink-500 underline hover:text-gray-300">Tails</a>, <a class="text-pink-500 underline hover:text-gray-300" href="https://github.com/github/gemoji">Gemoji</a> <a href="https://twemoji.twitter.com/"
-                class="text-pink-500 underline hover:text-gray-300">Twemoji</a> </p>
+            <p>Just a bit of fun by <a href="https://twitter.com/amritnagi" class="text-pink-500 underline hover:text-gray-300">@amritnagi</a>.</p>
+            <p>
+              Inspired by <a href="https://twitter.com/tallneil" class="text-pink-500 underline hover:text-gray-300">Neil Shankar's</a> icon for
+              <a href="https://www.producthunt.com/posts/snakeplant" class="text-pink-500 underline hover:text-gray-300">Snake Plant</a>
+            </p>
+            <p>
+              Built quickly using <a href="https://a.paddle.com/v2/click/37973/124350?link=3167" class="text-pink-500 underline hover:text-gray-300">Tails</a>,
+              <a class="text-pink-500 underline hover:text-gray-300" href="https://github.com/github/gemoji">Gemoji</a>
+              <a href="https://twemoji.twitter.com/" class="text-pink-500 underline hover:text-gray-300">Twemoji</a>
+            </p>
           </div>
         </div>
       </div>
 
-      
-      <p class="font-extrabold text-center text-yellow-300">Favourites</p>
-      <div class="w-16 h-1 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500" ></div>
+      <p class="font-extrabold text-center text-yellow-300">Shortlist</p>
+      <div class="w-16 h-1 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500"></div>
       <template x-for="nameoji in favourites">
         <div class="flex items-center justify-start w-full gap-4 py-2 mx-auto md:w-1/2">
           <div class="flex w-1/3 gap-4">
-            <img class="w-6 h-6 md:w-12 md:h-12" :src="'https://twemoji.maxcdn.com/v/13.1.0/svg/' + emojis[nameoji.emoji1].emoji.codePointAt(0).toString(16) +'.svg'">
-            <img class="w-6 h-6 md:w-12 md:h-12" :src="'https://twemoji.maxcdn.com/v/13.1.0/svg/' + emojis[nameoji.emoji2].emoji.codePointAt(0).toString(16) +'.svg'">
-          
+            <img class="w-6 h-6 md:w-12 md:h-12" :src="'https://twemoji.maxcdn.com/v/13.1.0/svg/' + emojis[nameoji.emoji1].emoji.codePointAt(0).toString(16) +'.svg'" />
+            <img class="w-6 h-6 md:w-12 md:h-12" :src="'https://twemoji.maxcdn.com/v/13.1.0/svg/' + emojis[nameoji.emoji2].emoji.codePointAt(0).toString(16) +'.svg'" />
           </div>
-            
+
           <p class="font-extrabold text-pink-500" x-text="emojis[nameoji.emoji1].tags[nameoji.tag1]"></p>
           <p class="font-extrabold text-purple-500" x-text="emojis[nameoji.emoji2].tags[nameoji.tag2]"></p>
-
         </div>
-          
       </template>
 
-        <p class="mt-8 font-extrabold text-center text-yellow-300">History</p>
-        <div class="w-16 h-1 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500" ></div>
-        <template x-for="nameoji in history">
-          <div class="flex items-center justify-start w-full gap-4 py-2 mx-auto md:w-1/2">
-            <div class="flex w-1/3 gap-4">
-              <img class="w-6 h-6 md:w-12 md:h-12" :src="'https://twemoji.maxcdn.com/v/13.1.0/svg/' + emojis[nameoji.emoji1].emoji.codePointAt(0).toString(16) +'.svg'">
-              <img class="w-6 h-6 md:w-12 md:h-12" :src="'https://twemoji.maxcdn.com/v/13.1.0/svg/' + emojis[nameoji.emoji2].emoji.codePointAt(0).toString(16) +'.svg'">
-            
-            </div>
-              
-            <p class="font-extrabold text-pink-500" x-text="emojis[nameoji.emoji1].tags[nameoji.tag1]"></p>
-            <p class="font-extrabold text-purple-500" x-text="emojis[nameoji.emoji2].tags[nameoji.tag2]"></p>
-
+      <p class="mt-8 font-extrabold text-center text-yellow-300">History</p>
+      <div class="w-16 h-1 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500"></div>
+      <template x-for="nameoji in history">
+        <div class="flex items-center justify-start w-full gap-4 py-2 mx-auto md:w-1/2">
+          <div class="flex w-1/3 gap-4">
+            <img class="w-6 h-6 md:w-12 md:h-12" :src="'https://twemoji.maxcdn.com/v/13.1.0/svg/' + emojis[nameoji.emoji1].emoji.codePointAt(0).toString(16) +'.svg'" />
+            <img class="w-6 h-6 md:w-12 md:h-12" :src="'https://twemoji.maxcdn.com/v/13.1.0/svg/' + emojis[nameoji.emoji2].emoji.codePointAt(0).toString(16) +'.svg'" />
           </div>
-            
-        </template>
-    
-  </section>
 
-  
+          <p class="font-extrabold text-pink-500" x-text="emojis[nameoji.emoji1].tags[nameoji.tag1]"></p>
+          <p class="font-extrabold text-purple-500" x-text="emojis[nameoji.emoji2].tags[nameoji.tag2]"></p>
+        </div>
+      </template>
+    </section>
 
-  <!-- AlpineJS Library -->
-  <script src="//unpkg.com/alpinejs" defer></script>
-  <!-- Emoji Source-->
-  <script src="emoji.json"></script>
-  <script>
-    function nameoji() {
-      return {
-        allEmojis: emojis, //Emoji list
-        favourites: [], // That's right, I'm from the UK!
-        history: [], // Array to store the history
-        //Set random values to pick up the emoji / tag
-        emoji1: Math.floor(Math.random() * this.emojis.length),
-        emoji2: Math.floor(Math.random() * this.emojis.length),
-        tag1: "0",
-        tag2: "0",
-        
-        shuffleaway() {
-          // Get random numbers for the Emoji's
-          this.emoji1 = Math.floor(Math.random() * this.allEmojis.length);
-          this.emoji2 = Math.floor(Math.random() * this.allEmojis.length);
-          if (this.emoji1 == this.emoji2) {
+    <!-- AlpineJS Library -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- Emoji Source-->
+    <script src="emoji.json"></script>
+    <script>
+      function nameoji() {
+        return {
+          allEmojis: emojis, //Emoji list
+          favourites: [], // That's right, I'm from the UK!
+          history: [], // Array to store the history
+          //Set random values to pick up the emoji / tag
+          emoji1: Math.floor(Math.random() * this.emojis.length),
+          emoji2: Math.floor(Math.random() * this.emojis.length),
+          tag1: "0",
+          tag2: "0",
+
+          //Notification/Toast
+          addFav: false,
+          doSwap: false,
+          doShuffle: false,
+
+          shuffleaway() {
+            // Get random numbers for the Emoji's
+            this.emoji1 = Math.floor(Math.random() * this.allEmojis.length);
             this.emoji2 = Math.floor(Math.random() * this.allEmojis.length);
-          }
-          //Get random numbers for the tag
-          this.tag1 = Math.floor(Math.random() * this.allEmojis[this.emoji1].tags.length);
-          this.tag2 = Math.floor(Math.random() * this.allEmojis[this.emoji2].tags.length);
-          //Twemoji doing it's magic to replace the emoji with svg from cdn
-          twemoji.parse(document.body, {folder: 'svg', ext: '.svg'});
-          this.addHistory()
-        },
-        swapsies() {
-          //Swap the data for the two emoji's
-          tempEmoji = this.emoji1
-          tempTag = this.tag1
-          this.emoji1 = this.emoji2
-          this.tag1 = this.tag2
-          this.emoji2 = tempEmoji
-          this.tag2 = tempTag
-          this.addHistory()
-        },
-        addHistory() {
-          //Check if combination already exists in the history array, and if not add it
-          that = this
-          let alreadyInHistory = this.history.some(function(el) {
-            return el.emoji1 === that.emoji1 && el.emoji2 === that.emoji2 && el.tag1 === that.tag1 && el.tag2 === that.tag2
-          });
-          if (!alreadyInHistory) {
-            this.history.push({"emoji1": this.emoji1, "emoji2": this.emoji2, "tag1": this.tag1, "tag2": this.tag2});
-          }        
-        },
-        favourite() {
-          //Check if combination already exists in the favourite array, and if not add it
-          that = this
-          let alreadyInFavourites = this.favourites.some(function(el) {
-            return el.emoji1 === that.emoji1 && el.emoji2 === that.emoji2 && el.tag1 === that.tag1 && el.tag2 === that.tag2
-          });
-          if (!alreadyInFavourites) {
-            this.favourites.push({"emoji1": this.emoji1, "emoji2": this.emoji2, "tag1": this.tag1, "tag2": this.tag2});
-          }        
-        }
-      };
-    }
+            if (this.emoji1 == this.emoji2) {
+              this.emoji2 = Math.floor(Math.random() * this.allEmojis.length);
+            }
+            //Get random numbers for the tag
+            this.tag1 = Math.floor(Math.random() * this.allEmojis[this.emoji1].tags.length);
+            this.tag2 = Math.floor(Math.random() * this.allEmojis[this.emoji2].tags.length);
+            //Twemoji doing it's magic to replace the emoji with svg from cdn
+            twemoji.parse(document.body, { folder: "svg", ext: ".svg" });
 
-  </script>
+            //Notify
+            this.doShuffle = true;
+            setTimeout(() => {
+              this.doShuffle = false;
+            }, 500);
+
+            this.addHistory();
+          },
+          swapsies() {
+            //Swap the data for the two emoji's
+            tempEmoji = this.emoji1;
+            tempTag = this.tag1;
+            this.emoji1 = this.emoji2;
+            this.tag1 = this.tag2;
+            this.emoji2 = tempEmoji;
+            this.tag2 = tempTag;
+            //Notify
+            this.doSwap = true;
+            setTimeout(() => {
+              this.doSwap = false;
+            }, 250);
+            this.addHistory();
+          },
+          addHistory() {
+            //Check if combination already exists in the history array, and if not add it
+            that = this;
+            let alreadyInHistory = this.history.some(function (el) {
+              return el.emoji1 === that.emoji1 && el.emoji2 === that.emoji2 && el.tag1 === that.tag1 && el.tag2 === that.tag2;
+            });
+            if (!alreadyInHistory) {
+              this.history.push({ emoji1: this.emoji1, emoji2: this.emoji2, tag1: this.tag1, tag2: this.tag2 });
+            }
+          },
+          favourite() {
+            //Check if combination already exists in the favourite array, and if not add it
+            that = this;
+            let alreadyInFavourites = this.favourites.some(function (el) {
+              return el.emoji1 === that.emoji1 && el.emoji2 === that.emoji2 && el.tag1 === that.tag1 && el.tag2 === that.tag2;
+            });
+            if (!alreadyInFavourites) {
+              this.favourites.push({ emoji1: this.emoji1, emoji2: this.emoji2, tag1: this.tag1, tag2: this.tag2 });
+            }
+            //Notify
+            this.addFav = true;
+            setTimeout(() => {
+              this.addFav = false;
+            }, 500);
+          },
+        };
+      }
+    </script>
 
     <!-- 100% privacy friendly analytics -->
     <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
-    
-</body>
-
+  </body>
 </html>
